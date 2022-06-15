@@ -64,9 +64,13 @@ if(isset($_POST['submit'])){
 	$fn = $_POST['fn'];
 	$ln =$_POST['ln'];
 	$operation = $_POST['operation'];
-if ($fn>=0 && $ln>=0) {
+if ($fn<0 AND $ln<0) {
 
-	switch ($operation) {
+	echo"<div class='res'> Nenagative number are not allowed!!</div>";
+}
+else{
+
+		switch ($operation) {
 		case 'add':
 			$result = $fn + $ln;
 			echo "<div class='res'> Result is:". $result."</div>";
@@ -87,9 +91,6 @@ if ($fn>=0 && $ln>=0) {
 			echo"Invalit Select existing Operation!!!";
 			break;
 	}
-}
-else{
-	echo"Nenagative number are not allowed!!";
 }
 }
 ?>
